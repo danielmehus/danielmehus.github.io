@@ -23,9 +23,9 @@
 	--main-hover: #696969;
 
 	/* button */
-	--button-outline: rgba(8, 25, 110, 1);
-	--button-text: rgba(8, 25, 110, 1);
-	--button-hover: rgba(8, 25, 110, 0.5);
+	--button-outline: #ffffff;
+	--button-text: #000000;
+	--button-hover: #000000;
 
 }
 
@@ -207,12 +207,10 @@ input, select, textarea {
 
 		a.minor {
 			color: var(--main-header);
-			border-bottom: dotted 1px var(--main-header);
 		}
 
 		a.minor:hover {
-			color: var(--main-hover);
-			border-bottom: dotted 1px var(--main-hover);
+			font-weight: bold;
 		}
 
 	strong, b {
@@ -1900,12 +1898,15 @@ input, select, textarea {
 		transition: border-color 0.2s ease, color 0.2s ease;
         **/
 		background-color: transparent;
+        /**
 		border: solid 1.2px !important;
 		border-color: var(--button-outline) !important;
 		border-radius: 4em;
+        **/
 		color: var(--button-text) !important;
 		cursor: pointer;
 		display: inline-block;
+        /**
 		font-size: 0.7em;
 		font-weight: bold;
 		height: calc(3.75em + 2px);
@@ -1918,6 +1919,7 @@ input, select, textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
+        **/
 	}
 
 	.button.leftmargin {
@@ -1941,6 +1943,7 @@ input, select, textarea {
 			transition: opacity 0.2s ease, transform 0.2s ease;
             **/
 			/* background: #ffffff; */
+            /**
 			border-radius: 3em;
 			content: '';
 			height: 100%;
@@ -1949,6 +1952,7 @@ input, select, textarea {
 			position: absolute;
 			top: 0;
 			width: 100%;
+            **/
 		}
 
 		input[type="submit"].icon:before,
@@ -2019,7 +2023,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: var(--button-hover) !important;
+			border-color: var(--button-outline) !important;
 			color: var(--button-hover) !important;
 		}
 
@@ -3723,6 +3727,47 @@ input, select, textarea {
 	padding-right: 3em;
 	padding-left: 0em;
 } */
+
+/* Collapsible */
+/* source: https://www.w3schools.com/howto/howto_js_collapsible.asp */
+.collapsible {
+  background-color: var(--menu-base);
+  color: var(--menu-active);
+  cursor: pointer;
+  padding: 1em 0 0 0;
+  width: 55%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1em;
+}
+
+.active, .collapsible:hover {
+  font-weight: bold;
+  color: var(--menu-active);
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: var(--menu-active);
+  font-weight: bold;
+  float: right;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding-left: 2em;
+  max-height: 0; 
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: -var(--menu-base);
+  color: -var(--menu-active);
+  font-size: 1em;
+}
+
 
 @media screen and (max-width: 980px) {
 	.column {
