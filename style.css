@@ -1,0 +1,9 @@
+/* Minimal styles for your GitHub Pages site */
+:root { --maxw: 800px; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; }
+.site-header { border-bottom: 1px solid #ddd; padding: 1rem; max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.site-header h1 { margin: 0; font-size: 1.3rem; }
+nav a { margin-right: 1rem; text-decoration: none; }
+.content { padding: 1.25rem; max-width: var(--maxw); margin: 0 auto; }
+.site-footer { border-top: 1px solid #ddd; padding: 1rem; max-width: var(--maxw); margin: 0 auto; font-size: .9rem; color: #555; }

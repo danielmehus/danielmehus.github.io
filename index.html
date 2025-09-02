@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name · Home</title>
+  <meta name="description" content="Personal website for Your Name">
+  <meta property="og:title" content="Your Name">
+  <meta property="og:description" content="Personal website for Your Name">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Your Name</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+      <a href="mailto:you@example.com">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section>
+      <h2>Hello!</h2>
+      <p>Welcome to my website. I'm a <em>your-role-here</em> based in <em>your-city</em>.</p>
+      <p>This site is hosted for free on GitHub Pages.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Your Name · Built with GitHub Pages</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
