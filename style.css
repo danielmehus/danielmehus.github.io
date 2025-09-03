@@ -1,34 +1,93 @@
-/* Minimal styles for your GitHub Pages site */
-:root { --maxw: 800px; }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 2.6; }
-.site-header { border-bottom: 1px solid #ddd; padding: 1rem; max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.site-header h1 { margin: 0; font-size: 1.3rem; }
-nav a { margin-right: 1rem; text-decoration: none; }
-.content { padding: 1.25rem; max-width: var(--maxw); margin: 0 auto; }
-.site-footer { border-top: 1px solid #ddd; padding: 1rem; max-width: var(--maxw); margin: 0 auto; font-size: .9rem; color: #555; }
-/* logo wrapper */
-.logo {
-  position: fixed;        /* stays in place as you scroll */
-  top: 2rem;              /* adjust vertical placement */
-  left: 2rem;             /* adjust horizontal placement */
-  z-index: 1000;          /* keeps it above other content */
-  mix-blend-mode: difference; /* makes text invert on backgrounds (optional) */
+/* ===== Tokens (edit these to retheme quickly) ===== */
+:root{
+  --maxw: 960px;
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #555555;
+  --border: #e5e5e5;
+
+  --accent: #000000;              /* keep pure black vibe */
+  --font: "Work Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --lh: 1.6;
+  --letter-wide: .08em;           /* emulate letter-spacing feel */
 }
 
-/* logo text */
-.logo-text {
-  font-family: "Helvetica", sans-serif; /* swap for another font if you want */
+/* Base reset-ish */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: var(--lh);
+  text-rendering: optimizeLegibility;
+}
+
+/* Layout shells */
+.site-header,
+.content,
+.site-footer { max-width: var(--maxw); margin: 0 auto; }
+
+.site-header {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-footer {
+  padding: var(--space-2);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* Fixed logo/title (optional) */
+.logo {
+  position: fixed;
+  top: 3rem;
+  left: 3rem;
+  z-index: 1000;
+  mix-blend-mode: difference;     /* optional: invert over imagery */
+}
+.logo-text{
   font-size: 20px;
   font-weight: 400;
-  letter-spacing: 1.3px;
+  letter-spacing: var(--letter-wide);
   text-transform: uppercase;
-  color: white;
-  cursor: pointer;
+  color: #fff;                    /* use #000 if you disable blend mode */
   user-select: none;
 }
 
-/* optional hover effect */
-.logo-text:hover {
-  color: #ffcc00; /* change to your accent color */
+/* Nav */
+nav a{
+  margin-right: var(--space-2);
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: var(--letter-wide);
+  text-transform: uppercase;
+  font-size: .9rem;
 }
+nav a:last-child { margin-right: 0; }
+nav a:hover { text-decoration: underline; }
+
+/* Content */
+.content { padding: var(--space-4) var(--space-2); }
+.content h1, .content h2, .content h3 {
+  margin: 0 0 .6rem 0;
+  letter-spacing: var(--letter-wide);
+  text-transform: uppercase;
+}
+.content p { margin: .85rem 0; }
+.content a { color: var(--text); text-decoration: underline; }
+
+/* Media */
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* Utilities */
+.muted { color: var(--muted); }
