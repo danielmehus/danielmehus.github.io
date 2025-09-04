@@ -1,9 +1,0 @@
-Edit text/pages → change the Markdown files (index.md, about.md, etc.).
-
-Add/remove menu items → update header_pages in _config.yml.
-
-Site title/description → update _config.yml (no HTML edits).
-
-Visual tweaks → adjust /assets/css/custom.css (keeps changes isolated).
-
-New sections → add something.md with layout: page and put it in header_pages.
