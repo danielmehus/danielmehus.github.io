@@ -112,10 +112,8 @@ a, a:visited {
 }
 .menu-list a:hover { background: #f5f5f5; }
 
-/* Hide duplicate name in Minima footer */
-.site-footer .footer-heading,
-.site-footer .contact-list .p-name {
-  display: none !important;
-}
+/* Remove footer completely */
+.site-footer { display: none !important; }
+
 
 
