@@ -1,0 +1,71 @@
+---
+---
+
+@import "minima";
+
+/* ===== White background, black text ===== */
+:root{
+  --maxw: 900px;
+  --space-2: 1rem;
+  --space-4: 2rem;
+  --border: #e5e5e5;
+  --text: #000;
+  --bg: #fff;
+  --muted: #444;
+  --letter-wide: .08em;
+}
+
+html, body { background:#fff; color:#000; }
+a { color: inherit; text-decoration: underline; }
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky; top: 0; z-index: 100;
+}
+.site-header .wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-title, .site-title:visited {
+  color:#000 !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  letter-spacing: var(--letter-wide);
+}
+
+/* Page content */
+.page-content { max-width: var(--maxw); margin:0 auto; padding:var(--space-4) var(--space-2); }
+.page-content h1, .page-content h2 { text-transform:uppercase; letter-spacing:var(--letter-wide); }
+
+/* Footer */
+.site-footer { border-top:1px solid var(--border); color:var(--muted); background:var(--bg); }
+
+/* ===== Hamburger ===== */
+.menu { position: relative; }
+.menu-button{
+  background:transparent; border:1px solid var(--border);
+  border-radius:8px; width:44px; height:36px;
+  display:grid; place-items:center; cursor:pointer;
+}
+.hamburger{ position:relative; width:22px; height:2px; background:var(--text); }
+.hamburger::before,.hamburger::after{
+  content:""; position:absolute; left:0; width:22px; height:2px; background:var(--text);
+}
+.hamburger::before{ top:-7px; } .hamburger::after{ top:7px; }
+.menu-button[aria-expanded="true"] .hamburger{ background:transparent; }
+.menu-button[aria-expanded="true"] .hamburger::before{ top:0; transform:rotate(45deg); }
+.menu-button[aria-expanded="true"] .hamburger::after{ top:0; transform:rotate(-45deg); }
+
+.menu-list{
+  position:absolute; right:0; top:calc(100% + .5rem);
+  background:#fff; border:1px solid var(--border); border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08); padding:.4rem; display:grid;
+}
+.menu-list a{ padding:.5rem; text-decoration:none; color:#000; }
+.menu-list a:hover{ background:#f5f5f5; }
