@@ -13,9 +13,3 @@
   document.addEventListener('click', (e) => { if (!e.target.closest('[data-menu]')) close(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 })();
-
-// Make all external links open in a new tab
-document.querySelectorAll('a[href^="http"]').forEach(link => {
-  link.setAttribute('target', '_blank');
-  link.setAttribute('rel', 'noopener');
-});
