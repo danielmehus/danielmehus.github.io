@@ -8,6 +8,7 @@ theme: minima
 # Optional: add links in the header
 header_pages:
   - about.md
+  - professional.md
   - writing.md
   - contact.md
 
