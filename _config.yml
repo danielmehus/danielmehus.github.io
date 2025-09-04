@@ -1,0 +1,13 @@
+title: "M. Daniel Mehus"
+description: "Personal website of M. Daniel Mehus"
+email: you@example.com
+url: https://danielmehus.github.io
+baseurl: ""          # keep empty for user sites
+theme: minima
+
+# Pages to show in the dropdown menu
+header_pages:
+  - about.md
+  - work.md
+  - writing.md
+  - contact.md
