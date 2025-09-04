@@ -115,5 +115,14 @@ a, a:visited {
 /* Remove footer completely */
 .site-footer { display: none !important; }
 
+/* Custom footer style */
+.copyright-footer {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.85rem;
+  color: #666; /* subtle grey */
+}
+
+
 
 
