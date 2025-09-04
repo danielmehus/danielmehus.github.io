@@ -4,7 +4,7 @@ title: Work
 permalink: /work/
 ---
 
-- [Resume] (Mehus resume 5.19.25 (3).pdf)
-- [Curricula Vitae] (CV Daniel Mehus 2025 (2).pdf)
+- [Resume](/Mehus%20resume%205.19.25%20%283%29.pdf)
+- [Curricula Vitae](/CV%20Daniel%20Mehus%202025%20%282%29.pdf)
 - Certifications
 - Trip Log
