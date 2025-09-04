@@ -1,75 +1,106 @@
 ---
 ---
 
-/* Import the theme */
+/* 1) Set Minima’s link colors BEFORE the import */
+$brand-color: #000;
+$link-base-color: #000;
+
+/* 2) Import the theme */
 @import "minima";
 
-/* ===== White background, black text ===== */
+/* 3) Your overrides (brace-balanced) */
+
+/* Global link style: black, underline on hover */
+.site-title, .site-title:visited,
+.page-content a, .page-content a:visited,
+.menu-list a, .menu-list a:visited,
+a, a:visited {
+  color: #000 !important;
+  text-decoration: none;
+}
+.page-content a:hover,
+.menu-list a:hover {
+  text-decoration: underline;
+}
+
+/* Optional: layout polish */
 :root{
   --maxw: 900px;
   --space-2: 1rem;
   --space-4: 2rem;
   --border: #e5e5e5;
-  --text: #000;
-  --bg: #fff;
   --muted: #444;
-  --letter-wide: .08em;
 }
-
-html, body { background:#fff; color:#000; }
-a { color: inherit; text-decoration: underline; }
-
-/* Header */
-.site-header {
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-  position: sticky; top: 0; z-index: 100;
-}
-.site-header .wrap {
+.page-content {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: var(--space-2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: var(--space-4) var(--space-2);
 }
-.site-title, .site-title:visited {
-  color:#000 !important;
-  text-decoration: none !important;
-  font-weight: 600;
-  letter-spacing: var(--letter-wide);
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
 }
 
-/* Page content */
-.page-content { max-width: var(--maxw); margin:0 auto; padding:var(--space-4) var(--space-2); }
-.page-content h1, .page-content h2 { text-transform:uppercase; letter-spacing:var(--letter-wide); }
-
-/* Footer */
-.site-footer { border-top:1px solid var(--border); color:var(--muted); background:var(--bg); }
-
-/* ===== Hamburger ===== */
+/* Optional: hamburger styles (only if you’re using them) */
 .menu { position: relative; }
 .menu-button{
-  background:transparent; border:1px solid var(--border);
-  border-radius:8px; width:44px; height:36px;
-  display:grid; place-items:center; cursor:pointer;
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 44px;
+  height: 36px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
 }
-.hamburger{ position:relative; width:22px; height:2px; background:var(--text); }
-.hamburger::before,.hamburger::after{
-  content:""; position:absolute; left:0; width:22px; height:2px; background:var(--text);
+.hamburger{
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background: #000;
+  display: block;
+  transition: background .2s ease;
 }
-.hamburger::before{ top:-7px; } .hamburger::after{ top:7px; }
-.menu-button[aria-expanded="true"] .hamburger{ background:transparent; }
-.menu-button[aria-expanded="true"] .hamburger::before{ top:0; transform:rotate(45deg); }
-.menu-button[aria-expanded="true"] .hamburger::after{ top:0; transform:rotate(-45deg); }
+.hamburger::before,
+.hamburger::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: #000;
+  transition: transform .22s ease, top .22s ease, opacity .22s ease;
+}
+.hamburger::before { top: -7px; }
+.hamburger::after  { top:  7px; }
+
+.menu-button[aria-expanded="true"] .hamburger { background: transparent; }
+.menu-button[aria-expanded="true"] .hamburger::before { top: 0; transform: rotate(45deg); }
+.menu-button[aria-expanded="true"] .hamburger::after  { top: 0; transform: rotate(-45deg); }
 
 .menu-list{
-  position:absolute; right:0; top:calc(100% + .5rem);
-  background:#fff; border:1px solid var(--border); border-radius:10px;
-  box-shadow:0 8px 24px rgba(0,0,0,.08); padding:.4rem; display:grid;
+  position: absolute;
+  right: 0;
+  top: calc(100% + .5rem);
+  min-width: 180px;
+  background: #fff;
+  color: #000;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  padding: .4rem;
+  display: grid;
 }
-.menu-list a{ padding:.5rem; text-decoration:none; color:#000; }
-.menu-list a:hover{ background:#f5f5f5; }
-
+.menu-list a{
+  display: block;
+  padding: .5rem .6rem;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
 }
-
+.menu-list a:hover { background: #f5f5f5; }
