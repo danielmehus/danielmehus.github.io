@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-I’m **M. Daniel Mehus**. Short bio here.
+Student of Philosophy. College Access Professional. Prompt Engineer.
