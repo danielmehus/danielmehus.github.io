@@ -51,14 +51,57 @@ body {
 .menu { position: relative; }
 
 .menu-button {
+  /* --- Hamburger button --- */
+.menu-button{
+  /* reset + sizing for good tap target */
+  appearance: none;
   background: transparent;
   border: 1px solid var(--border);
-  padding: .45rem .7rem;
   border-radius: 8px;
-  letter-spacing: var(--letter-wide);
-  text-transform: uppercase;
-  font-size: .85rem;
+  width: 44px;               /* min touch target */
+  height: 36px;
+  padding: 0;
+  display: grid;
+  place-items: center;
   cursor: pointer;
+}
+
+/* the three lines are one element + pseudo lines */
+.hamburger{
+  position: relative;
+  width: 22px;               /* icon width */
+  height: 2px;               /* middle line thickness */
+  background: var(--text);
+  display: block;
+  transition: background .2s ease;
+}
+.hamburger::before,
+.hamburger::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  transition: transform .22s ease, top .22s ease, opacity .22s ease;
+}
+.hamburger::before{ top: -7px; }
+.hamburger::after { top:  7px; }
+
+/* turn into an “X” when menu is open (aria-expanded=true) */
+.menu-button[aria-expanded="true"] .hamburger{
+  background: transparent;            /* hide middle bar */
+}
+.menu-button[aria-expanded="true"] .hamburger::before{
+  top: 0; transform: rotate(45deg);
+}
+.menu-button[aria-expanded="true"] .hamburger::after{
+  top: 0; transform: rotate(-45deg);
+}
+
+/* (Optional) subtle hover */
+.menu-button:hover{ border-color: #cfcfcf; }
+
 }
 
 .menu-list {
