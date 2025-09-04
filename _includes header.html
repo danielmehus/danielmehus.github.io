@@ -1,0 +1,20 @@
+<header class="site-header" role="banner">
+  <div class="wrap">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
+      {{ site.title }}
+    </a>
+
+    <div class="menu" data-menu>
+      <button class="menu-button" aria-haspopup="true" aria-expanded="false" aria-controls="menu-list" aria-label="Menu">
+        <span class="hamburger" aria-hidden="true"><span class="bar"></span></span>
+      </button>
+
+      <nav id="menu-list" class="menu-list" hidden>
+        {%- assign menu_pages = site.pages | where_exp: "p", "site.header_pages contains p.path" -%}
+        {%- for p in menu_pages -%}
+          <a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a>
+        {%- endfor -%}
+      </nav>
+    </div>
+  </div>
+</header>
