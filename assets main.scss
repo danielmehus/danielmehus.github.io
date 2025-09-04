@@ -10,6 +10,10 @@ $link-base-color: #000;
 
 /* 3) Safe overrides (brace-balanced) */
 
+a, a:visited { color: #000 !important; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
 /* Make links black; underline on hover */
 .site-title, .site-title:visited,
 .page-content a, .page-content a:visited,
