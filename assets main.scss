@@ -8,9 +8,9 @@ $link-base-color: #000;
 /* 2) Import the theme */
 @import "minima";
 
-/* 3) Your overrides (brace-balanced) */
+/* 3) Safe overrides (brace-balanced) */
 
-/* Global link style: black, underline on hover */
+/* Make links black; underline on hover */
 .site-title, .site-title:visited,
 .page-content a, .page-content a:visited,
 .menu-list a, .menu-list a:visited,
@@ -23,7 +23,7 @@ a, a:visited {
   text-decoration: underline;
 }
 
-/* Optional: layout polish */
+/* Light layout polish */
 :root{
   --maxw: 900px;
   --space-2: 1rem;
@@ -31,11 +31,13 @@ a, a:visited {
   --border: #e5e5e5;
   --muted: #444;
 }
+
 .page-content {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: var(--space-4) var(--space-2);
 }
+
 .site-header {
   position: sticky;
   top: 0;
@@ -43,6 +45,7 @@ a, a:visited {
   background: #fff;
   border-bottom: 1px solid var(--border);
 }
+
 
 /* Optional: hamburger styles (only if you’re using them) */
 .menu { position: relative; }
