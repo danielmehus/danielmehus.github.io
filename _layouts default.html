@@ -7,8 +7,9 @@
     {%- seo -%}
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   </head>
-  <link rel="stylesheet" href="{{ '/assets/main.css?v=2' | relative_url }}">
-<script src="{{ '/assets/js/menu.js?v=2' | relative_url }}"></script>
+ <link rel="stylesheet" href="{{ '/assets/main.css?v=' | append: site.github.build_revision | relative_url }}">
+<script src="{{ '/assets/js/menu.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
 
   <body>
     {%- include header.html -%}
