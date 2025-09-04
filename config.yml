@@ -1,7 +1,7 @@
 title: "M. Daniel Mehus"
-description: "Personal website of M. Daniel Mehus"
+description: "Professional website of M. Daniel Mehus"
 email: maylan.mehus[at]gmail.com
-url: https://YOUR-USERNAME.github.io
+url: https://danielmehus.github.io
 baseurl: ""    # keep empty for a user site (username.github.io)
 
 theme: minima
@@ -15,4 +15,4 @@ header_pages:
 # (Optional) social links that minima can show in the footer
 minima:
   social_links:
-    - { platform: github, user_url: "https://github.com/YOUR-USERNAME" }
+    - { platform: github, user_url: "https://github.com/danielmehus" }
