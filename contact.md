@@ -4,4 +4,4 @@ title: Contact
 permalink: /contact/
 ---
 
-Email: <you@example.com>
+Email: <maylan.mehus[at]gmail.com>
