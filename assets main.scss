@@ -1,25 +1,8 @@
 ---
 ---
 
-/* 1) Set Minima’s link colors BEFORE the import */
-$brand-color: #000;
-$link-base-color: #000;
-
-/* 2) Import the theme */
+/* Import the theme */
 @import "minima";
-
-/* 3) Insurance: force black in site areas */
-.site-title, .site-title:visited,
-.page-content a, .page-content a:visited,
-.menu-list a, .menu-list a:visited,
-a, a:visited {
-  color: #000 !important;
-  text-decoration: none;
-}
-.page-content a:hover, .menu-list a:hover {
-  text-decoration: underline;
-}
-
 
 /* ===== White background, black text ===== */
 :root{
