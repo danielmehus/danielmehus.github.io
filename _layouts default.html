@@ -7,10 +7,6 @@
     {%- seo -%}
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   </head>
- <link rel="stylesheet" href="{{ '/assets/main.css?v=' | append: site.github.build_revision | relative_url }}">
-<script src="{{ '/assets/js/menu.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-
-
   <body>
     {%- include header.html -%}
     <main class="page-content" aria-label="Content">
@@ -21,4 +17,6 @@
     {%- include footer.html -%}
     <script src="{{ '/assets/js/menu.js' | relative_url }}"></script>
   </body>
+  <link rel="stylesheet" href="{{ '/assets/main.css?v=' | append: site.github.build_revision | relative_url }}">
+<script src="{{ '/assets/js/menu.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 </html>
