@@ -1,7 +1,22 @@
 ---
 ---
 
+/* 1) Tell Minima to use black for links */
+$brand-color: #000;
+$link-base-color: #000; /* works on current GH Pages Minima */
+
+/* 2) Pull in the theme */
 @import "minima";
+
+/* 3) Extra insurance: force page/content/menu links black */
+.site-title, .site-title:visited,
+.page-content a, .page-content a:visited,
+.menu-list a, .menu-list a:visited,
+a, a:visited {
+  color: #000 !important;
+  text-decoration: none;
+}
+.page-content a:hover, .menu-list a:hover { text-decoration: underline; }
 
 /* ===== White background, black text ===== */
 :root{
@@ -70,13 +85,5 @@ a { color: inherit; text-decoration: underline; }
 .menu-list a{ padding:.5rem; text-decoration:none; color:#000; }
 .menu-list a:hover{ background:#f5f5f5; }
 
-/* Force links to look like normal black text */
-a, a:visited {
-  color: #000 !important;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline; /* optional: underline only on hover */
 }
 
