@@ -1,4 +1,4 @@
-l---
+---
 layout: home
 title: Home
 ---
