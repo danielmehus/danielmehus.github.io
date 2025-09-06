@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     {%- seo -%}
+    <link rel="stylesheet" href="{{ '/assets/main.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
     {%- include header.html -%}
@@ -14,8 +15,35 @@
       </div>
     </main>
     {%- include footer.html -%}
-    <script src="{{ '/assets/js/menu.js' | relative_url }}"></script>
+
+    <!-- Existing menu script -->
+    <script src="{{ '/assets/js/menu.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
+    <!-- 🌙 Theme toggle script -->
+    <script>
+      const root = document.documentElement;
+      const btn = document.getElementById('themeBtn');
+
+      // load saved theme (default = light)
+      const saved = localStorage.getItem('theme');
+      if (saved) root.dataset.theme = saved;
+
+      function setLabels() {
+        const to = (root.dataset.theme === 'dark') ? 'light' : 'dark';
+        if (btn) {
+          btn.setAttribute('aria-label', `Switch to ${to} mode`);
+          btn.title = `Switch to ${to} mode`;
+        }
+      }
+      setLabels();
+
+      if (btn) {
+        btn.addEventListener('click', () => {
+          root.dataset.theme = (root.dataset.theme === 'dark') ? 'light' : 'dark';
+          localStorage.setItem('theme', root.dataset.theme || 'light');
+          setLabels();
+        });
+      }
+    </script>
   </body>
-  <link rel="stylesheet" href="{{ '/assets/main.css?v=' | append: site.github.build_revision | relative_url }}">
-<script src="{{ '/assets/js/menu.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 </html>
