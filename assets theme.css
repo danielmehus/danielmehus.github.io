@@ -1,0 +1,38 @@
+:root{
+  --bg:#ffffff; --fg:#0f172a; --panel:#f8f9fb; --panel-border:rgba(0,0,0,.12);
+}
+:root[data-theme="dark"]{
+  --bg:#0b1220; --fg:#e5e7eb; --panel:#111827; --panel-border:rgba(255,255,255,.18);
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);margin:0;transition:background .2s,color .2s}
+
+/* ensure header row layout so button can sit at right */
+.site-header .wrap{display:flex;align-items:center;gap:1rem}
+
+/* menu colors adapt */
+.menu-list{background:var(--panel);color:var(--fg);border:1px solid var(--panel-border)}
+.menu-list a{color:var(--fg)!important}
+.menu-list a:hover{background:rgba(0,0,0,.06)}
+:root[data-theme="dark"] .menu-list a:hover{background:rgba(255,255,255,.06)}
+
+/* toggle button */
+.theme-icon{
+  display:inline-grid;place-items:center;width:36px;height:36px;padding:0;margin-left:auto;
+  border-radius:999px;cursor:pointer;color:var(--fg);
+  border:1px solid var(--panel-border);background:#f2f3f5;
+  transition:background .2s,border-color .2s,transform .06s
+}
+.theme-icon:hover{background:#e9ebef}
+.theme-icon:active{transform:scale(.97)}
+:root[data-theme="dark"] .theme-icon{background:#1c2433}
+:root[data-theme="dark"] .theme-icon:hover{background:#222c3f}
+.theme-icon .sun{display:none}
+:root[data-theme="dark"] .theme-icon .moon{display:none}
+:root[data-theme="dark"] .theme-icon .sun{display:block}
+
+/* let links adapt in dark mode without changing your existing rules */
+:root[data-theme="dark"] a,
+:root[data-theme="dark"] .site-title,
+:root[data-theme="dark"] .page-content a,
+:root[data-theme="dark"] .menu-list a { color: var(--fg) !important; }
