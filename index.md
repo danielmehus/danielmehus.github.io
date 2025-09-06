@@ -1,6 +1,6 @@
----
+l---
 layout: home
 title: Home
 ---
-The professional website of Daniel Mehus
+Daniel Mehus | Work, Research, and Projects
 <style>.site-footer{display:none !important}</style>
