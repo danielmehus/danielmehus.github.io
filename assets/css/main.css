@@ -31,14 +31,6 @@
 }
 
 
-
-/* Optional: smooth color transitions, respecting reduced-motion */
-* { transition: background-color .2s ease, color .2s ease; }
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
-}
-
-
 	/* button */
 	--button-outline: rgba(8, 25, 110, 1);
 	--button-text: rgba(8, 25, 110, 1);
@@ -3698,5 +3690,6 @@ input, select, textarea {
 		padding-bottom: 2em;
 	}
 }
+
 
 
