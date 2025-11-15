@@ -13,7 +13,7 @@
 :root {
   /* backgrounds */
   --menu-base: #ffffff;          /* nav / header */
-  --main-base: #ffffff;          /* page background */
+  --main-base: #999DA0;          /* page background */
   --about-base: #f5f5f5;         /* subtle section alt */
   --project-base-lightest: #e6e6e6; /* borders, dividers */
   --footer-base: #000000;        /* footer bg (inverted) */
@@ -3694,6 +3694,7 @@ input, select, textarea {
 		padding-bottom: 2em;
 	}
 }
+
 
 
 
