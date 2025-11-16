@@ -3489,13 +3489,13 @@ input, select, textarea {
 					transition-delay: 4.25s;
 				}
 
-		#sidebar nav a {
-			-moz-transition: color 0.2s ease;
-			-webkit-transition: color 0.2s ease;
-			-ms-transition: color 0.2s ease;
-			transition: color 0.2s ease;
-			border: 0;
-			color: rgba(255, 255, 255, 0.35);
+		                #sidebar nav a {
+                        -moz-transition: color 0.2s ease;
+                        -webkit-transition: color 0.2s ease;
+                        -ms-transition: color 0.2s ease;
+                        transition: color 0.2s ease;
+                        border: 0;
+                        color: var(--menu-inactive);
 			display: block;
 			font-size: 0.7em;
 			font-weight: bold;
@@ -3694,6 +3694,7 @@ input, select, textarea {
 		padding-bottom: 2em;
 	}
 }
+
 
 
 
