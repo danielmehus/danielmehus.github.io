@@ -5,7 +5,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
-	Modified by Nhung Hoang (2020)
+	Modified by Nhung Hoang (2020) and Daniel Mehus (2025)
 
 */
 
@@ -21,9 +21,9 @@
   /* text */
   --menu-active: #111111;        /* primary text (deep gray for softer contrast than #000) */
   --menu-inactive: rgba(0,0,0,0); /* muted text */
-  --menu-hover: rgba(0,0,0,.25);   /* hover text */
+  --menu-hover: rgba(0,0,0,.75);   /* hover text */
   --main-header: #111111;        /* headings */
-  --main-hover: #666666;         /* subdued hover states */
+  --main-hover: #a9a9a9;         /* subdued hover states */
 
   /* gradients (kept neutral or unused) */
   --gradient-start: #ffffff;
@@ -3694,6 +3694,7 @@ input, select, textarea {
 		padding-bottom: 2em;
 	}
 }
+
 
 
 
