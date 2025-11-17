@@ -31,26 +31,7 @@
   --gradient-end: #000000;
 }
 
-/* Dark auto-switch (OS setting) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --menu-base: #0e0e0f;
-    --main-base: #161718;
-    --about-base: #1f2021;
-    --project-base-lightest: #2a2b2d;
-    --footer-base: #000000;
 
-    --menu-pink: #ffffff;
-    --menu-active: #ffffff;
-    --menu-inactive: rgba(255,255,255,.35);
-    --menu-hover: rgba(255,255,255,.6);
-    --main-header: #ffffff;
-    --main-hover: #c0c0c0;
-
-    --gradient-start: #0e0e0f;
-    --gradient-end: #2a2b2d;
-  }
-}
 
 /* Optional: smooth color transitions, respecting reduced-motion */
 * { transition: background-color .2s ease, color .2s ease; }
@@ -3714,4 +3695,5 @@ input, select, textarea {
 		padding-bottom: 2em;
 	}
 }
+
 
