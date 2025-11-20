@@ -3500,7 +3500,7 @@ input, select, textarea {
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: rgba(255, 255, 255, 0.35);
+			color: rgba(50, 50, 50, 0.35);
 			display: block;
 			font-size: 0.7em;
 			font-weight: bold;
@@ -3695,5 +3695,6 @@ input, select, textarea {
 		padding-bottom: 2em;
 	}
 }
+
 
 
