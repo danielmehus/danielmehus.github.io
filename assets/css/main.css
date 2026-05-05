@@ -29,17 +29,22 @@
   /* gradient (kept minimal) */
   --gradient-start: #000000;
   --gradient-end: #000000;
-
-  /* button */
-  --button-outline: rgba(8, 25, 110, 1);
-  --button-text: rgba(8, 25, 110, 1);
-  --button-hover: rgba(8, 25, 110, 0.5);
 }
+
+
 
 /* Optional: smooth color transitions, respecting reduced-motion */
 * { transition: background-color .2s ease, color .2s ease; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
+}
+
+
+	/* button */
+	--button-outline: rgba(8, 25, 110, 1);
+	--button-text: rgba(8, 25, 110, 1);
+	--button-hover: rgba(8, 25, 110, 0.5);
+
 }
 
 html, body, div, span, applet, object,
@@ -2051,9 +2056,9 @@ input, select, textarea {
 				input[type="reset"]:hover:active:after,
 				input[type="button"]:hover:active:after,
 				button:hover:active:after,
-				.button:hover:active:after {
+				/* .button:hover:active:after {
 					opacity: 0.1;
-				}
+				} */
 
 /* Features */
 
@@ -2855,10 +2860,16 @@ input, select, textarea {
 			}
 
 			.spotlights > section > .image:before {
+				/* -moz-transition: opacity 1s ease;
+				-webkit-transition: opacity 1s ease;
+				-ms-transition: opacity 1s ease;
+				transition: opacity 1s ease; */
+				/* background: rgba(49, 36, 80, 0.9); */
 				content: '';
 				display: block;
 				height: 100%;
 				left: 0;
+				/* opacity: 0; */
 				opacity: 1;
 				position: absolute;
 				top: 0;
@@ -3252,6 +3263,18 @@ input, select, textarea {
 
 /* Footer */
 
+	/* #sidebar + #wrapper + #footer {
+		margin-left: 18em;
+	}
+
+		@media screen and (max-width: 1280px) {
+
+			#sidebar + #wrapper + #footer {
+				margin-left: 0;
+			}
+
+		} */
+
 	#footer > p {
 		padding: 0.3em 0.8em 0.3em 0em;
 		margin: 0;
@@ -3613,7 +3636,7 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-    background-color: var(--main-base);
+    background-color: var(--main-base); /* uses your standard light background */
 	}
 
 		#intro p {
@@ -3645,6 +3668,7 @@ input, select, textarea {
 		}
 
 /* Two Columns */
+/* source: https://www.w3schools.com/howto/howto_css_two_columns.asp */
 .row {
 	display: flex;
 }
@@ -3654,6 +3678,16 @@ input, select, textarea {
 	padding-left: 6em;
 }
 
+/* .left {
+	padding-left: 3em;
+	padding-right: 0em;
+}
+
+.right {
+	padding-right: 3em;
+	padding-left: 0em;
+} */
+
 @media screen and (max-width: 980px) {
 	.column {
 		width: 100%;
@@ -3661,3 +3695,5 @@ input, select, textarea {
 		padding-bottom: 2em;
 	}
 }
+
+
