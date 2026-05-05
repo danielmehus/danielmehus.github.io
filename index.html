@@ -1,472 +1,186 @@
 <!DOCTYPE HTML>
 <!--
-  Hyperspace by HTML5 UP — html5up.net | @ajlkn
-  Modified by Nhung Hoang (2020) and Daniel Mehus (2025)
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Modified by Nhung Hoang (2020) and Daniel Mehus (2025)
 -->
-<html lang="en">
-
-  <head>
-    <title>Daniel Mehus</title>
-    <meta name="description" content="Daniel Mehus — College Connection Mentor, philosophy researcher, and education advocate based in Nashville, TN. Specializing in post-secondary access for first-generation, low-income, and new American students.">
-    <meta name="keywords" content="Daniel Mehus, education access, college mentor, Nashville, philosophy, Vanderbilt, first-generation students, Oasis Center">
-    <meta name="author" content="Daniel Mehus">
-    <meta property="og:title" content="Daniel Mehus — Educator & Philosophy Researcher">
-    <meta property="og:description" content="College Connection Mentor at Oasis Center in Nashville. Vanderbilt and University of Luxembourg alumnus working on post-secondary education access and continental philosophy.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://danielmehus.github.io/">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="google-site-verification" content="8ulT0guJZN6Cw-CFU0eICPSkIwxCScrVVlfltsKUYB4" />
-
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-    <style>
-      /* ============================================================
-         SIMPLE, ACCESSIBLE OVERRIDES
-         System fonts. Black on white. Content first.
-         ============================================================ */
-
-      :root {
-        --white:       #ffffff;
-        --off-white:   #f5f5f5;
-        --light-gray:  #e8e8e8;
-        --mid-gray:    #767676;
-        --dark:        #1a1a1a;
-        --black:       #111111;
-        --link-blue:   #0055cc;
-        --link-visited:#551a8b;
-        --focus-color: #005fcc;
-
-        --menu-base:             var(--off-white);
-        --main-base:             var(--white);
-        --about-base:            var(--off-white);
-        --project-base-lightest: var(--white);
-        --footer-base:           var(--black);
-        --menu-active:           var(--black);
-        --menu-inactive:         var(--mid-gray);
-        --menu-hover:            var(--dark);
-        --main-header:           var(--black);
-        --main-hover:            var(--link-blue);
-        --gradient-start:        var(--dark);
-        --gradient-end:          var(--dark);
-        --button-outline:        var(--dark);
-        --button-text:           var(--dark);
-        --button-hover:          var(--black);
-      }
-
-      body, input, select, textarea {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
-                     Helvetica, Arial, sans-serif;
-        font-size: 17px;
-        font-weight: 400;
-        color: var(--dark);
-        line-height: 1.7;
-      }
-
-      @media screen and (max-width: 1280px) {
-        body, input, select, textarea { font-size: 16px; }
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
-                     Helvetica, Arial, sans-serif;
-        color: var(--black);
-        font-weight: 700;
-        line-height: 1.25;
-        letter-spacing: -0.01em;
-      }
-
-      h1 { font-size: 2.6em; }
-      h2 { font-size: 1.8em; }
-      h3 { font-size: 1.1em; font-weight: 600; }
-
-      p {
-        color: var(--dark);
-        margin: 0 0 1.4em;
-      }
-
-      a {
-        color: var(--link-blue);
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        border-bottom: none;
-      }
-
-      a:hover   { color: var(--black); text-decoration: underline; }
-      a:visited { color: var(--link-visited); }
-      a:focus {
-        outline: 3px solid var(--focus-color);
-        outline-offset: 2px;
-        border-radius: 2px;
-      }
-
-      .skip-link {
-        position: absolute;
-        top: -100%;
-        left: 0;
-        background: var(--black);
-        color: var(--white);
-        padding: 0.75em 1.5em;
-        font-weight: 600;
-        font-size: 0.9em;
-        z-index: 99999;
-        text-decoration: none;
-      }
-
-      .skip-link:focus { top: 0; }
-
-      /* Sidebar */
-
-      #sidebar {
-        background: var(--off-white);
-        border-right: 1px solid var(--light-gray);
-        padding: 2.5em 2em;
-      }
-
-      #sidebar nav a {
-        font-family: inherit;
-        font-size: 0.78em;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--mid-gray);
-        text-decoration: none;
-        border-bottom: none;
-        padding: 1em 0;
-      }
-
-      #sidebar nav a:hover  { color: var(--black); }
-      #sidebar nav a.active { color: var(--black); }
-      #sidebar nav a:focus  { outline: 3px solid var(--focus-color); outline-offset: 2px; }
-
-      #sidebar nav a:before { background: var(--off-white); }
-      #sidebar nav a:after  { background-image: none; background-color: var(--black); height: 2px; }
-
-      @media screen and (max-width: 1280px) {
-        #sidebar {
-          background: var(--black);
-          border-bottom: none;
-        }
-        #sidebar nav a { color: rgba(255,255,255,0.55); }
-        #sidebar nav a:hover,
-        #sidebar nav a.active { color: #ffffff; }
-        #sidebar nav a:after  { background-color: #ffffff; }
-      }
-
-      /* Intro */
-
-      #intro { background: var(--white); }
-
-      #intro > .inner {
-        max-width: 900px;
-        padding: 5em;
-      }
-
-      @media screen and (max-width: 1280px) { #intro > .inner { padding: 4em; } }
-      @media screen and (max-width: 736px)  { #intro > .inner { padding: 2.5em 1.5em; } }
-
-      .intro-grid {
-        display: grid;
-        grid-template-columns: 1fr 260px;
-        gap: 4em;
-        align-items: start;
-      }
-
-      @media screen and (max-width: 900px) {
-        .intro-grid { grid-template-columns: 1fr; gap: 2em; }
-        .intro-photo { order: -1; }
-      }
-
-      .intro-name {
-        font-size: 3em;
-        font-weight: 700;
-        color: var(--black);
-        margin: 0 0 0.1em;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-      }
-
-      @media screen and (max-width: 736px) { .intro-name { font-size: 2.2em; } }
-
-      .intro-role {
-        font-size: 0.95em;
-        font-weight: 400;
-        color: var(--mid-gray);
-        margin: 0 0 1.5em;
-      }
-
-      .intro-contact {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1em 1.5em;
-        margin-bottom: 1.8em;
-      }
-
-      .intro-contact a  { font-size: 0.9em; font-weight: 500; }
-      .intro-pronouns   { font-size: 0.8em; color: var(--mid-gray); }
-
-      .intro-section-label {
-        font-size: 0.7em;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--mid-gray);
-        margin-bottom: 0.4em;
-      }
-
-      .intro-interests {
-        font-size: 0.92em;
-        color: var(--dark);
-        margin-bottom: 2em;
-      }
-
-      .doc-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5em 1.5em;
-      }
-
-      .doc-links li { padding: 0; }
-
-      .doc-links a {
-        font-size: 0.88em;
-        font-weight: 600;
-        color: var(--link-blue);
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        border-bottom: none;
-      }
-
-      .doc-links a:hover   { color: var(--black); }
-      .doc-links a:visited { color: var(--link-visited); }
-
-      .intro-photo img {
-        width: 100%;
-        max-width: 260px;
-        display: block;
-        border: 1px solid var(--light-gray);
-      }
-
-      @media screen and (max-width: 900px) { .intro-photo img { max-width: 180px; } }
-
-      /* About */
-
-      .wrapper.style3 {
-        background-color: var(--off-white);
-        padding: 5em;
-        border-top: 1px solid var(--light-gray);
-        border-bottom: 1px solid var(--light-gray);
-      }
-
-      @media screen and (max-width: 1280px) { .wrapper.style3 { padding: 4em; } }
-      @media screen and (max-width: 736px)  { .wrapper.style3 { padding: 2.5em 1.5em; } }
-
-      #one > .inner { max-width: 680px; }
-
-      #one h2 { font-size: 1.6em; margin-bottom: 1em; }
-
-      #one p {
-        font-size: 0.97em;
-        line-height: 1.8;
-        margin-bottom: 1.3em;
-      }
-
-      #one p:last-child { margin-bottom: 0; }
-
-      /* Work */
-
-      .wrapper.style2 { background-color: var(--white); }
-
-      .spotlights > section { border-bottom: 1px solid var(--light-gray); }
-      .spotlights > section:nth-child(2) { background-color: var(--off-white); }
-      .spotlights > section:nth-child(3) { background-color: var(--white); }
-      .spotlights > section h2 { font-size: 1.4em; margin-bottom: 0.5em; }
-      .spotlights > section p  { font-size: 0.92em; color: var(--dark); }
-
-      /* Buttons */
-
-      .button,
-      input[type="submit"],
-      input[type="reset"],
-      input[type="button"],
-      button {
-        font-family: inherit !important;
-        font-size: 0.78em !important;
-        font-weight: 600 !important;
-        letter-spacing: 0.05em !important;
-        text-transform: none !important;
-        border: 2px solid var(--dark) !important;
-        border-radius: 4px !important;
-        color: var(--dark) !important;
-        background: transparent !important;
-        height: auto !important;
-        line-height: 1 !important;
-        padding: 0.7em 1.4em !important;
-        transition: background 0.15s ease, color 0.15s ease !important;
-      }
-
-      .button:hover, button:hover {
-        background: var(--dark) !important;
-        color: var(--white) !important;
-      }
-
-      .button:focus, button:focus {
-        outline: 3px solid var(--focus-color) !important;
-        outline-offset: 2px !important;
-      }
-
-      ul.actions { gap: 0.6em; margin-left: 0; flex-wrap: wrap; }
-      ul.actions li { padding-left: 0; }
-
-      /* Footer */
-
-      .wrapper.style1-alt { background-color: var(--black); }
-
-      #footer > p {
-        font-size: 0.78em;
-        color: rgba(255,255,255,0.5);
-        padding: 1.2em 2em;
-        text-align: right;
-      }
-
-      #footer a { color: rgba(255,255,255,0.6); text-decoration: underline; }
-      #footer a:hover { color: #ffffff; }
-
-    </style>
-  </head>
-
-  <body class="is-preload">
-
-    <a class="skip-link" href="#intro">Skip to main content</a>
-
-    <!-- Sidebar -->
-    <section id="sidebar">
-      <div class="inner">
-        <nav aria-label="Main navigation">
-          <ul>
-            <li><a href="#intro">Welcome</a></li>
-            <li><a href="#one">About</a></li>
-            <li><a href="#two">Work</a></li>
-          </ul>
-        </nav>
-      </div>
-    </section>
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-      <!-- Intro -->
-     <section id="intro" class="wrapper style1 fullscreen">
-        <div class="inner">
-          <div class="intro-grid">
-
-            <div class="intro-text">
-              <h1 class="intro-name">Daniel Mehus</h1>
-              <p class="intro-role">College Connection Mentor &amp; Philosophy Researcher — Nashville, TN</p>
-
-              <div class="intro-contact">
-                <a href="mailto:dan.mehus@gmail.com">dan.mehus@gmail.com</a>
-                <span class="intro-pronouns">he / him / his</span>
-              </div>
-
-              <p class="intro-section-label">Interests</p>
-              <p class="intro-interests">
-                Post-secondary education access, social and political philosophy,
-                community development, continental philosophy, psychology and cognition
-              </p>
-
-              <ul class="doc-links" aria-label="Documents">
-                <li><a href="docs/Daniel-Mehus-american-CV-4-5-26 (1).pdf" target="_blank">CV</a></li>
-                <li><a href="docs/Daniel-Mehus-american-resume-4-4-26 (2).pdf" target="_blank">Résumé</a></li>
-                <li><a href="https://www.linkedin.com/in/danielmehus/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                <li><a href="docs/Daniel-Mehus-Lebenslauf-4-4-26 (3).pdf" target="_blank">Lebenslauf</a></li>
-              </ul>
-            </div>
-
-            <div class="intro-photo">
-              <img src="images/headshot-2021.jpg" alt="Daniel Mehus" />
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="one" class="wrapper style3 fade-up">
-        <div class="inner">
-          <h2>About</h2>
-          <p>I am currently a College Connection Mentor at the Oasis Center in Nashville, where I work with high school students in Metro Nashville Public Schools as they make the transition from high school to college and other post-secondary opportunities. I specialize in supporting first-generation, low-income, and new American students, and I have an extensive background working with students who are traditionally underrepresented in higher education. I provide assistance with college and career exploration, applications, financial aid, and enrollment.</p>
-          <p>I earned my B.S. in Philosophy (Highest Honors) and Cognitive Studies at Vanderbilt and later studied Modern and Contemporary European Philosophy at the University of Luxembourg as a Guillaume Dupaix International Master's Scholar. My academic research focuses on continental philosophy, ethics, and social and political philosophy. I also dabble in ancient philosophy, psychology, and media studies.</p>
-          <p>I am now expanding my work to teaching and multi-modal research on education and community development. I am always open to discussing direct service work, education reform, and academic research.</p>
-        </div>
-      </section>
-
-      <!-- Work -->
-      <section id="two" class="wrapper style2 spotlights">
-
-        <section>
-          <a class="image"><img src="images/nonprofit2.png" alt="A collection of nonprofit and education sector observations" data-position="center center" /></a>
-          <div class="content">
-            <div class="inner">
-              <h2>Working Notes</h2>
-              <p>A small collection of observations and analyses about the non-profit and education sector from the perspective of a direct service provider.</p>
-              <ul class="actions">
-                <li><a href="https://substack.com/@danmehus" target="_blank" class="button">WN Blog</a></li>
-                <li><a href="Work-Notes-Resources-for-Students-and-Professionals.pdf" target="_blank" class="button">Student Resources</a></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <a class="image"><img src="images/phil.JPG" alt="Books and materials related to philosophical research" data-position="top center" /></a>
-          <div class="content">
-            <div class="inner">
-              <h2>Second Thought</h2>
-              <p>Philosophical reflections on academic materials and occasional miscellany.</p>
-              <ul class="actions">
-                <li><a href="https://substack.com/@danmehus" target="_blank" class="button">ST Blog</a></li>
-                <li><a href="https://docs.google.com/document/d/1_VoE7-s6aJGk7MAzS-gQWIJtOXxFYWCMZv3hFr9V2u4/edit?usp=sharing" target="_blank" class="button">Philosophy Resources</a></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <a class="image"><img src="images/worknotes.jpg" alt="Professional and academic development resources" data-position="top center" /></a>
-          <div class="content">
-            <div class="inner">
-              <h2>Professional &amp; Academic Development</h2>
-              <p>A resource hub meant to provide clarity for professionals and academics at any stage of their career.</p>
-              <ul class="actions">
-                <li><a href="Work-Notes-Academic-Research-Tools.pdf" target="_blank" class="button">Research Resources</a></li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-      </section>
-
-    </div><!-- end #wrapper -->
-
-    <!-- Footer -->
-    <footer id="footer" class="wrapper style1-alt">
-      <p>&copy; Daniel Mehus. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a></p>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-  </body>
+<html>
+
+	<head>
+		<title>Daniel Mehus</title>
+		<meta name="description" content="Daniel Mehus — College Connection Mentor, philosophy researcher, and education advocate based in Nashville, TN. Specializing in post-secondary access for first-generation, low-income, and new American students.">
+		<meta name="keywords" content="Daniel Mehus, education access, college mentor, Nashville, philosophy, Vanderbilt, first-generation students, Oasis Center">
+		<meta name="author" content="Daniel Mehus">
+		<meta property="og:title" content="Daniel Mehus — Educator & Philosophy Researcher">
+		<meta property="og:description" content="College Connection Mentor at Oasis Center in Nashville. Vanderbilt and University of Luxembourg alumnus working on post-secondary education access and continental philosophy.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://danielmehus.github.io/">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="google-site-verification" content="8ulT0guJZN6Cw-CFU0eICPSkIwxCScrVVlfltsKUYB4" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">About</a></li>
+							<li><a href="#two">Work</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+				<section id="intro" class="wrapper style1 fullscreen fade-up">
+					<div class="inner">
+							<div class="row">
+								<div class="column">
+									<h1>Daniel Mehus</h1>
+									<h3>dan.mehus@gmail.com</h3>
+									<h3>pronouns: he/him/his</h3>
+									<br>
+									<h3>Professional / Research Interests:</h3>
+<p style="color: #000000; font-size: 1em;">
+  post-secondary education access, social and political philosophy, community development,
+  continental philosophy, psychology and cognition
+</p>
+<br>
+<h3>
+  <a class="major" href="docs/Daniel-Mehus-american-CV-4-5-26 (1).pdf" target="_blank">CV</a>
+  |
+  <a class="major" href="docs/Daniel-Mehus-american-resume-4-4-26 (2).pdf" target="_blank">Resume</a>
+  |
+  <a class="major" href="https://www.linkedin.com/in/danielmehus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  |
+  <a class="major" href="docs/Daniel-Mehus-Lebenslauf-4-4-26 (3).pdf" target="_blank">Lebenslauf</a>
+</h3>
+
+								</div>
+								<div class="column">
+									<div class="image main"><img src="images/headshot-2021.jpg" alt="" data-position="top center"/></div>
+								</div>
+							</div>
+					</div>
+				</section>
+
+				<!-- One -->
+				<section id="one" class="wrapper style3 fade-up">
+					<div class="inner">
+						<h2>About</h2>
+						<p>I am currently a College Connection Mentor at the Oasis Center in Nashville, where I work with high school students with in Metro Nashville Public Schools as they make the transition from high school to college and other post-secondary opportunities. I specialize in supporting first-generation, low-income, and new American students, and I have an extensive background working with students who are traditionally underrepresented in higher education. I provide assistance with college and career exploration, applications, financial aid, and enrollment.    
+						</p>
+						<p>
+							I earned my B.S. in Philosophy (Highest Honors) and Cognitive Studies at Vanderbilt and later studied Modern and Contemporary European Philosophy at the University of Luxembourg as a Guillaume Dupaix International Master’s Scholar. My academic research focuses on continental philosophy, ethics, and social and political philosophy. I also dabble in ancient philosophy, psychology, and media studies.
+						</p>
+						<p>
+						<p>I am now expanding my work to teaching and multi-modal research on education and community development. I am always open to discussing direct service work, education reform, and academic research.
+						</p>
+						<!-- <p style="font-size:0.8em">
+							<i>*Nhung in Vietnamese nearly sounds like "ny-oom" in American English. Imagine a racecar zooming by.</i>
+						</p> -->
+					</div>
+				</section>
+
+				<!-- Two -->
+				<section id="two" class="wrapper style2 spotlights">
+					<section>
+						<a class="image"><img src="images/nonprofit2.png" alt="" data-position="center center" /></a>
+						<div class="content">
+							<div class="inner">
+								<h2>Working Notes</h2>
+								<p>A small collection of observations and analyses about the non-profit and education sector from the perspective of a direct service provider. 
+								</p>
+								<ul class="actions">
+									<li><a href="https://substack.com/@danmehus" target="_blank" class="button">WN Blog</a></li>
+									<li><a href="Work-Notes-Resources-for-Students-and-Professionals.pdf" target="_blank" class="button">Student Resources</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<a class="image"><img src="images/phil.JPG" alt="" data-position="top center" /></a>
+						<div class="content">
+							<div class="inner">
+								<h2>Second Thought</h2>
+								<p>Philosophical reflections on academic materials and occasional miscellany.
+								</p>
+								<ul class="actions">
+									<li><a href="https://substack.com/@danmehus" target="_blank" class="button">ST Blog</a>
+										<a href="https://docs.google.com/document/d/1_VoE7-s6aJGk7MAzS-gQWIJtOXxFYWCMZv3hFr9V2u4/edit?usp=sharing" target="_blank" class="button">Philosophy Resources</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<a class="image"><img src="images/worknotes.jpg" alt="" data-position="top center" /></a>
+						<div class="content">
+							<div class="inner">
+								<h2>Professional and Academic Development</h2>
+								<p>A resource hub meant to provide clarity for professionals and academics in any stage of their career.
+								</p>
+								<ul class="actions">
+									<li><a href="Work-Notes-Academic-Research-Tools.pdf""_blank" class="button">Research Resources</a>
+								</ul>
+							</div>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<p> &copy; Daniel Mehus. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP </a></p>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
