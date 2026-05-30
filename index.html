@@ -1,139 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="color-scheme" content="only light" />
   <meta name="theme-color" content="#fcfcfc" />
+  <meta name="color-scheme" content="only light" />
   <title>Your Name</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
  
-    :root {
-      --bg: #fcfcfc;
-      --text: #111;
-      --muted: #666;
-      --link: #111;
-      --link-hover: #555;
-      --nav-active: #111;
-      --border: #e5e5e5;
-      --font-body: Georgia, 'Times New Roman', serif;
-      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --max-width: 680px;
-      --side-pad: 2rem;
-    }
+  <!-- Fonts. Swap these if you want different typefaces. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital@1&display=swap" rel="stylesheet" />
  
-    html, body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-    }
- 
-    /* Layout */
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 3rem var(--side-pad) 6rem;
-    }
- 
-    /* Nav */
-    nav {
-      margin-bottom: 3.5rem;
-    }
- 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
- 
-    nav a {
-      font-family: var(--font-ui);
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: color 0.15s ease;
-    }
- 
-    nav a:hover { color: var(--text); }
-    nav a.active { color: var(--text); }
- 
-    /* Headings */
-    h1 {
-      font-family: var(--font-body);
-      font-size: 1.25rem;
-      font-weight: 400;
-      line-height: 1.4;
-      margin-bottom: 1.25rem;
-    }
- 
-    h2 {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 700;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-    }
- 
-    /* Body copy */
-    .content p {
-      font-size: 15px;
-      color: #222;
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
- 
-    .content p:last-child { margin-bottom: 0; }
- 
-    /* Links in content */
-    .content a {
-      color: var(--link);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
-      transition: color 0.15s ease;
-    }
- 
-    .content a:hover { color: var(--link-hover); }
- 
-    @media (max-width: 600px) {
-      :root { --side-pad: 1.25rem; }
-      .page { padding-top: 2rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
-    <nav>
+  <div class="content-fade-out"></div>
+ 
+  <div class="container">
+    <!-- NAVIGATION (same on every page — set class="active" on the current one) -->
+    <nav class="nav">
       <ul>
-        <li><a href="index.html" class="active">About</a></li>
+        <li><a class="active" href="index.html">About</a></li>
         <li><a href="thoughts.html">Thoughts</a></li>
         <li><a href="projects.html">Projects</a></li>
       </ul>
     </nav>
  
-    <main>
-      <h1>Daniel Mehus</h1>
+    <main class="main">
+      <div class="divider"></div>
+      <article class="article">
  
-      <div class="content">
-        <p>
-          Write a brief introduction about yourself here. Describe who you are, what you do, and what you're passionate about. This is your opportunity to give visitors a sense of your personality and expertise.
-        </p>
+        <h1>Your Name</h1>
  
-        <p>
-          Add more context about your background — where you studied, where you've worked, and the journey that brought you to where you are today. Keep it personal and genuine.
-        </p>
+        <p>I am a <em>role</em> at <a href="https://example.com" target="_blank" rel="noopener noreferrer">Company</a>.
+          Write a sentence or two here about the things you care about — your work, your interests,
+          the kinds of problems you like to think about.</p>
  
-        <p>
-          You can gain further insights into my background and interests through my <a href="thoughts.html">thoughts</a>, <a href="projects.html">projects</a>, find me on <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>, <a href="https://x.com/" target="_blank" rel="noopener">X/Twitter</a>, and <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>.
-        </p>
-      </div>
+        <p>Add a short background paragraph. Where you studied, where you’ve worked, what you’ve built.
+          Keep it plain and direct — the design does the rest.</p>
+ 
+        <p>You can find me on
+          <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer">GitHub</a>,
+          <a href="https://x.com/yourname" target="_blank" rel="noopener noreferrer">X/Twitter</a>, and
+          <a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+ 
+      </article>
     </main>
   </div>
 </body>
