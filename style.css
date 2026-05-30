@@ -1,0 +1,258 @@
+/* =============================================================
+   Personal site — shared styles
+   A faithful, build-free recreation of the shud.in layout.
+
+   HOW TO CUSTOMIZE
+   - Colors:  edit the variables in :root below (one place).
+   - Fonts:   swap the Google Fonts <link> in each .html <head>.
+   - Spacing/sizes: search for the comment tags (e.g. /* p-6 */)
+     which note the original values.
+
+   The palette is named "rurikon" (an approximation of a deep
+   Japanese indigo, used here as a cool near-grayscale). Lower
+   numbers = lighter, higher = darker.
+   ============================================================= */
+
+:root {
+  --bg: #fcfcfc;
+
+  --rurikon-100: #ccd1db;  /* faint: dot leaders */
+  --rurikon-200: #aeb5c3;  /* subtle: dates, list bullets, # anchor */
+  --rurikon-300: #8b92a4;  /* inactive nav, link underlines */
+  --rurikon-400: #6d7589;  /* focus outlines */
+  --rurikon-500: #525a6c;  /* body text */
+  --rurikon-600: #3c4355;  /* headings, link hover */
+  --rurikon-700: #2c3241;  /* strong hover */
+  --rurikon-800: #1e232f;  /* active nav (darkest) */
+  --rurikon-border: #e4e7ee;
+
+  --font-sans:  'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-mono:  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Breakpoints used below (for reference):
+     mobile = 600px, sm = 640px, md = 768px */
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  padding: 24px;                 /* p-6 */
+  font-family: var(--font-sans);
+  font-size: 14px;               /* text-sm */
+  line-height: 24px;             /* leading-6 */
+  font-weight: 400;
+  color: var(--rurikon-500);
+  background: var(--bg);
+  color-scheme: only light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {      /* sm */
+  body { padding: 40px; font-size: 15px; line-height: 28px; }
+}
+@media (min-width: 768px) {      /* md */
+  body { padding: 56px; font-size: 16px; line-height: 28px; }
+}
+
+/* Top fade mask on small screens (content scrolls under the padding) */
+.content-fade-out {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 24px;
+  z-index: 30;
+  pointer-events: none;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+}
+@media (min-width: 640px) { .content-fade-out { display: none; } }
+
+/* ---------- Layout ---------- */
+.container { display: flex; flex-direction: column; }
+@media (min-width: 600px) { .container { flex-direction: row; } }
+
+/* Left navigation rail (becomes a top row on small screens) */
+.nav { width: 100%; }
+@media (min-width: 600px) { .nav { width: 64px; margin-right: 24px; } }
+@media (min-width: 640px) { .nav { margin-right: 40px; } }
+@media (min-width: 768px) { .nav { margin-right: 56px; } }
+
+.nav ul {
+  list-style: none;
+  margin: 0 0 24px 0;            /* mb-6 */
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  text-align: right;
+  text-transform: lowercase;
+}
+@media (min-width: 600px) {
+  .nav ul {
+    display: block;
+    margin-bottom: 0;
+    position: sticky;
+    top: 24px;
+  }
+}
+@media (min-width: 640px) { .nav ul { top: 40px; } }
+@media (min-width: 768px) { .nav ul { top: 56px; } }
+
+.nav li { margin: 0 -8px; }      /* -mx-2 */
+.nav a {
+  display: inline-block;
+  width: 100%;
+  padding: 0 8px;                /* px-2 */
+  color: var(--rurikon-300);
+  text-decoration: none;
+  transition: color .15s;
+}
+.nav a:hover { color: var(--rurikon-600); }
+.nav a.active,
+.nav a.active:hover { color: var(--rurikon-800); }   /* current page */
+
+/* Main column + the hairline divider */
+.main {
+  position: relative;
+  flex: 1 1 0%;
+  max-width: 42rem;              /* max-w-2xl (672px) */
+}
+.divider {
+  position: absolute;
+  top: 0; right: 0;
+  width: 100%; height: 1px;
+  opacity: .5;
+  background: var(--rurikon-border);
+  mix-blend-mode: multiply;
+}
+@media (min-width: 600px) {
+  .divider { right: auto; left: 0; width: 1px; height: 100%; opacity: 1; }
+}
+
+.article { padding-left: 0; padding-top: 24px; }      /* pt-6 */
+@media (min-width: 600px) { .article { padding-top: 0; padding-left: 24px; } }  /* pl-6 */
+@media (min-width: 640px) { .article { padding-left: 40px; } }
+@media (min-width: 768px) { .article { padding-left: 56px; } }
+
+/* ---------- Typography ---------- */
+/* Headings are intentionally the same size as body text — just heavier. */
+.article h1, .article h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--rurikon-600);
+  text-wrap: balance;
+}
+.article h1 { margin-bottom: 28px; }                  /* mb-7 */
+.article h2 { margin-top: 56px; margin-bottom: 28px; }/* mt-14 / mb-7 */
+
+.article p { margin: 28px 0 0 0; }                    /* mt-7 (margins collapse) */
+
+.article a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rurikon-300);
+  text-decoration-thickness: from-font;
+  text-underline-offset: 2px;
+  word-break: break-word;
+  transition: text-decoration-color .15s;
+}
+.article a:hover { text-decoration-color: var(--rurikon-600); }
+
+.article em { font-family: var(--font-serif); font-style: italic; }
+
+.article code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+.article hr {
+  border: 0;
+  border-top: 1px solid var(--rurikon-border);
+  width: 96px;                   /* w-24 */
+  margin: 56px 0;                /* my-14 */
+}
+
+.article ul {
+  margin-top: 28px;              /* mt-7 */
+  padding-left: 20px;            /* pl-5 */
+  list-style: disc outside;
+}
+.article ul li { padding-left: 6px; }                 /* pl-1.5 */
+.article ul li::marker { color: var(--rurikon-200); }
+
+/* ---------- Projects: section headings with a hover "#" anchor ---------- */
+.section { position: relative; }
+.section .anchor {
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  width: 24px;                   /* mobile gutter */
+  text-align: center;
+  color: var(--rurikon-200);
+  text-decoration: none;
+  opacity: 0;
+  filter: blur(2px);
+  user-select: none;
+  transition: opacity .5s, filter .5s, color .15s;
+}
+@media (min-width: 640px) { .section .anchor { width: 40px; } }
+@media (min-width: 768px) { .section .anchor { width: 56px; } }
+.section:hover .anchor,
+.section:target .anchor { opacity: 1; filter: blur(0); }
+.section .anchor:hover { color: var(--rurikon-500); }
+
+/* ---------- Thoughts: title ........ date rows ---------- */
+.thoughts-list { list-style: none; margin: 0; padding: 0; }
+.thoughts-list li { font-weight: 500; }                /* font-medium */
+.thoughts-list a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 -8px;
+  padding: 0 8px;
+  color: inherit;
+  text-decoration: none;
+}
+.thoughts-list .title { color: var(--rurikon-500); transition: color .15s; }
+.thoughts-list a:hover .title { color: var(--rurikon-700); }
+
+.thoughts-list .leaders {
+  flex: 1 1 0%;
+  align-self: end;
+  height: 1em;
+  color: var(--rurikon-100);
+  background-image: radial-gradient(currentColor 1px, transparent 1.3px);
+  background-position: 0 bottom;
+  background-size: 5px 5px;
+  background-repeat: repeat-x;
+  transition: color .15s;
+}
+.thoughts-list a:hover .leaders { color: var(--rurikon-500); }
+
+.thoughts-list time {
+  align-self: start;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--rurikon-200);
+  transition: color .15s;
+}
+.thoughts-list a:hover time { color: var(--rurikon-500); }
+
+/* ---------- Focus (keyboard) ---------- */
+a:focus-visible {
+  outline: 1px dotted var(--rurikon-400);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
