@@ -1,234 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="color-scheme" content="only light" />
   <meta name="theme-color" content="#fcfcfc" />
-  <title>Projects — Your Name</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta name="color-scheme" content="only light" />
+  <title>Projects - Your Name</title>
  
-    :root {
-      --bg: #fcfcfc;
-      --text: #111;
-      --muted: #666;
-      --link: #111;
-      --link-hover: #555;
-      --border: #e5e5e5;
-      --font-body: Georgia, 'Times New Roman', serif;
-      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --max-width: 680px;
-      --side-pad: 2rem;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital@1&display=swap" rel="stylesheet" />
  
-    html, body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-    }
- 
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 3rem var(--side-pad) 6rem;
-    }
- 
-    /* Nav */
-    nav { margin-bottom: 3.5rem; }
- 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
- 
-    nav a {
-      font-family: var(--font-ui);
-      font-size: 14px;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: color 0.15s ease;
-    }
- 
-    nav a:hover { color: var(--text); }
-    nav a.active { color: var(--text); }
- 
-    /* Headings */
-    h1 {
-      font-family: var(--font-body);
-      font-size: 1.25rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-    }
- 
-    /* Section intro */
-    .intro {
-      font-size: 15px;
-      color: #333;
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
-    }
- 
-    /* Project sections */
-    .project {
-      margin-bottom: 2.5rem;
-    }
- 
-    .project-header {
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      margin-bottom: 0.6rem;
-    }
- 
-    .project-name {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-    }
- 
-    .project-name:hover { color: var(--muted); }
- 
-    .project-url {
-      font-family: var(--font-ui);
-      font-size: 12px;
-      color: var(--muted);
-      text-decoration: none;
-    }
- 
-    .project-url:hover { color: var(--text); }
- 
-    .project-desc {
-      font-size: 15px;
-      color: #333;
-      line-height: 1.8;
-    }
- 
-    .project-desc a {
-      color: var(--link);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
-      transition: color 0.15s ease;
-    }
- 
-    .project-desc a:hover { color: var(--link-hover); }
- 
-    /* Divider */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 2.5rem 0;
-    }
- 
-    /* Mini project list */
-    .mini-section h2 {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
- 
-    .mini-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
- 
-    .mini-list a {
-      font-family: var(--font-ui);
-      font-size: 14px;
-      color: var(--text);
-      text-decoration: none;
-      transition: color 0.15s ease;
-    }
- 
-    .mini-list a:hover { color: var(--muted); }
- 
-    @media (max-width: 600px) {
-      :root { --side-pad: 1.25rem; }
-      .page { padding-top: 2rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
-    <nav>
+  <div class="content-fade-out"></div>
+ 
+  <div class="container">
+    <nav class="nav">
       <ul>
         <li><a href="index.html">About</a></li>
         <li><a href="thoughts.html">Thoughts</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
       </ul>
     </nav>
  
-    <main>
-      <h1>Projects</h1>
-      <p class="intro">
-        Over the years, I've had the privilege of working on diverse projects, from open-source libraries to large-scale applications.
-      </p>
+    <main class="main">
+      <div class="divider"></div>
+      <article class="article">
  
-      <!-- Repeat this block for each major project -->
-      <div class="project">
-        <div class="project-header">
-          <a href="https://example.com" class="project-name" target="_blank" rel="noopener">Project One</a>
-          <a href="https://example.com" class="project-url" target="_blank" rel="noopener">example.com</a>
-        </div>
-        <p class="project-desc">
-          Describe what this project is, your role in it, and why it matters. Link to relevant resources like <a href="https://github.com/" target="_blank" rel="noopener">the repository</a> or a blog post about it.
-        </p>
-      </div>
+        <h1>Projects</h1>
  
-      <div class="project">
-        <div class="project-header">
-          <a href="https://example.com" class="project-name" target="_blank" rel="noopener">Project Two</a>
-          <a href="https://example.com" class="project-url" target="_blank" rel="noopener">github.com/you/project-two</a>
-        </div>
-        <p class="project-desc">
-          Another major project. Explain the problem it solves and highlight notable contributions or outcomes you're proud of.
-        </p>
-      </div>
+        <p>A short intro line about the work below — open-source libraries, apps,
+          experiments, whatever you want to highlight.</p>
  
-      <div class="project">
-        <div class="project-header">
-          <a href="https://example.com" class="project-name" target="_blank" rel="noopener">Project Three</a>
-        </div>
-        <p class="project-desc">
-          A third project. Keep descriptions focused — the goal is to give a clear picture of the work without over-explaining.
-        </p>
-      </div>
+        <!-- A project section. The id powers the hover "#" anchor link.
+             The heading links out to the project; the paragraph describes it. -->
+        <h2 class="section" id="project-one">
+          <a class="anchor" href="#project-one" aria-label="Link to this section">#</a>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">Project One</a>
+        </h2>
+        <p>Describe the project: what it is, when you made it, your role, and a
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">link or two</a> for more.</p>
  
-      <hr />
+        <h2 class="section" id="project-two">
+          <a class="anchor" href="#project-two" aria-label="Link to this section">#</a>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">Project Two</a>
+        </h2>
+        <p>Another description. You can use <code>inline code</code> and <em>emphasis</em> here too.</p>
  
-      <div class="mini-section">
-        <h2>Fun &amp; experimental projects</h2>
-        <ul class="mini-list">
-          <li><a href="https://example.com" target="_blank" rel="noopener">Side Project Alpha</a></li>
-          <li><a href="https://example.com" target="_blank" rel="noopener">Side Project Beta</a></li>
-          <li><a href="https://example.com" target="_blank" rel="noopener">Side Project Gamma</a></li>
+        <h2 class="section" id="project-three">
+          <a class="anchor" href="#project-three" aria-label="Link to this section">#</a>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">Project Three</a>
+        </h2>
+        <p>Keep these as long or as short as you like.</p>
+ 
+        <hr />
+ 
+        <p>Smaller experiments:</p>
+        <ul>
+          <li><a href="https://example.com" target="_blank" rel="noopener noreferrer">Experiment A</a></li>
+          <li><a href="https://example.com" target="_blank" rel="noopener noreferrer">Experiment B</a></li>
+          <li><a href="https://example.com" target="_blank" rel="noopener noreferrer">Experiment C</a></li>
         </ul>
-      </div>
  
-      <hr />
+        <hr />
  
-      <div class="mini-section">
-        <h2>Mini projects</h2>
-        <ul class="mini-list">
-          <li><a href="https://example.com" target="_blank" rel="noopener">Mini Project 1</a></li>
-          <li><a href="https://example.com" target="_blank" rel="noopener">Mini Project 2</a></li>
-          <li><a href="https://example.com" target="_blank" rel="noopener">Mini Project 3</a></li>
+        <p>Other bits and pieces (find them all on
+          <a href="https://github.com/yourname" target="_blank" rel="noopener noreferrer">GitHub</a>):</p>
+        <ul>
+          <li><a href="https://example.com" target="_blank" rel="noopener noreferrer">Mini project one</a></li>
+          <li><a href="https://example.com" target="_blank" rel="noopener noreferrer">Mini project two</a></li>
+          <li><a href="https://example.com" target="_blank" rel="noopener noreferrer">Mini project three</a></li>
         </ul>
-      </div>
+ 
+      </article>
     </main>
   </div>
 </body>
