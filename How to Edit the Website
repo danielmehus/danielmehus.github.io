@@ -1,0 +1,141 @@
+# How to update your website
+ 
+A plain-English guide to editing your site directly on **github.com** — no code
+editor, no git, no downloads. You only ever change the words; the design takes
+care of itself.
+ 
+---
+ 
+## The basics (read this once)
+ 
+**How to edit any file:**
+1. Go to your repo: `github.com/danielmehus/danielmehus.github.io`
+2. Click the file you want to change (`index.html`, `thoughts.html`, or `projects.html`).
+3. Click the **pencil icon** (✏️ "Edit this file"), top right of the file view.
+4. Make your change in the text box.
+5. Scroll down, click the green **"Commit changes…"** button, then **"Commit changes"** again in the popup.
+6. Wait about a minute, then open your site and **hard-refresh**:
+   - Windows: **Ctrl + Shift + R**
+   - Mac: **Cmd + Shift + R**
+That hard-refresh is important — without it your browser may keep showing the old version and you'll think nothing happened.
+ 
+**The two things you must NOT touch:**
+- Anything between `<style>` and `</style>` — that's the design. Leave it alone.
+- The `<nav> … </nav>` block — that's the menu (covered at the very bottom if you ever need it).
+You only edit text **between `<article class="article">` and `</article>`**. That's your content.
+ 
+**Tip:** to find text fast while editing, press **Ctrl + F** (Mac: **Cmd + F**) and type a few words you can see on the page.
+ 
+---
+ 
+## 1. The About page (`index.html`)
+ 
+This is your homepage. Find this block:
+ 
+```html
+<h1>Daniel Mehus</h1>
+ 
+<p>Write a brief introduction about yourself here. ...</p>
+ 
+<p>Add more context about your background ...</p>
+ 
+<p>You can gain further insights ... find me on
+  <a href="https://github.com/" ...>GitHub</a>,
+  <a href="https://x.com/" ...>X/Twitter</a>, and
+  <a href="https://linkedin.com/" ...>LinkedIn</a>.</p>
+```
+ 
+**Change your name:** edit the words between `<h1>` and `</h1>`.
+ 
+**Change the intro:** replace the text inside each `<p> … </p>`. Keep the `<p>` and `</p>` tags — just swap the words between them.
+ 
+**Fix your social links:** put your real URLs inside the quotes. For example:
+ 
+```html
+<a href="https://github.com/danielmehus" target="_blank" rel="noopener noreferrer">GitHub</a>
+```
+ 
+Only change the part inside the quotes (`https://github.com/danielmehus`) and the word between `>` and `</a>` (`GitHub`). Leave the rest as-is.
+ 
+---
+ 
+## 2. The Thoughts page (`thoughts.html`)
+ 
+This is a list of writing. Each entry looks like this:
+ 
+```html
+<li>
+  <a href="#">
+    <span class="title">A Title for Your First Post</span>
+    <span class="leaders"></span>
+    <time>2026.05.01</time>
+  </a>
+</li>
+```
+ 
+**Three things you can change per entry:**
+- `href="#"` → the link to the post (a URL, or leave `#` for now).
+- the text inside `<span class="title"> … </span>` → the title.
+- the text inside `<time> … </time>` → the date (use the `YYYY.MM.DD` format so it lines up).
+**Leave `<span class="leaders"></span>` exactly as-is** — that's the dotted line, and it fills in automatically.
+ 
+**To add a new post:** copy one whole `<li> … </li>` block (from `<li>` to `</li>`) and paste it directly below, then edit the title, date, and link. Newest posts go at the **top**.
+ 
+**To remove a post:** delete one full `<li> … </li>` block.
+ 
+---
+ 
+## 3. The Projects page (`projects.html`)
+ 
+Each project is a heading plus a paragraph:
+ 
+```html
+<h2 class="section" id="project-one">
+  <a class="anchor" href="#project-one" aria-label="Link to this section">#</a>
+  <a href="https://example.com" target="_blank" rel="noopener noreferrer">Project One</a>
+</h2>
+<p>Describe the project: what it is, when you made it, your role ...</p>
+```
+ 
+**To edit a project:**
+- Change `Project One` (the text between `>` and `</a>` on the second link) → the project's name.
+- Change `https://example.com` (the second link's `href`) → where the project lives.
+- Change the text inside `<p> … </p>` → the description.
+**The `id` (one rule):** each `<h2>` has an `id="project-one"`. The `#` link just above it must use the **same** word with a `#` in front (`href="#project-one"`). If you add a new project, give it a unique id (e.g. `id="project-four"` and `href="#project-four"`). If that feels fiddly, you can ignore the `#` link — it only adds a little hover anchor and the page works fine without worrying about it.
+ 
+**To add a project:** copy a full `<h2 …> … </h2>` block **and** the `<p> … </p>` right after it, paste below, and edit the three things above (plus the id if you want the anchor to work).
+ 
+**The lists at the bottom** ("Smaller experiments") work like the Thoughts list — copy a `<li> … </li>` to add a row:
+ 
+```html
+<li><a href="https://example.com" target="_blank" rel="noopener noreferrer">Experiment A</a></li>
+```
+ 
+Change the URL in the quotes and the name between `>` and `</a>`.
+ 
+**To remove a section divider** (the short horizontal line), delete a line that says `<hr />`. To keep it, leave it.
+ 
+---
+ 
+## Common mistakes (why a change "didn't work")
+ 
+- **You forgot to hard-refresh.** This is the #1 cause. Ctrl/Cmd + Shift + R.
+- **You didn't commit.** After editing, you must click the green **Commit changes** button (twice). No commit = no change.
+- **You edited the wrong copy.** Each page is a separate file. Editing `index.html` won't change the Projects page.
+- **You deleted a tag by accident.** Every `<p>` needs a matching `</p>`, every `<a …>` a matching `</a>`. If the page looks broken, you likely removed half of a pair — undo and try again.
+- **You changed something inside `<style>`.** That's the design. If the look breaks, you edited there by mistake. Re-upload that page's original file to reset it.
+---
+ 
+## (Advanced, optional) Changing the menu
+ 
+The menu is the same on all three pages. To rename or add a link, edit the
+`<nav>` block in **every** file so they match, and put `class="active"` on the
+link for the page you're currently on:
+ 
+```html
+<li><a class="active" href="index.html">About</a></li>
+<li><a href="thoughts.html">Thoughts</a></li>
+<li><a href="projects.html">Projects</a></li>
+```
+ 
+Most of the time you'll never need to touch this.
