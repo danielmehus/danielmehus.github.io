@@ -1,0 +1,50 @@
+Daniel Mehus — personal site
+A minimal, build-free personal site (three pages) modeled on the layout of
+shud.in. No frameworks, no build step, no dependencies — each
+page is a single self-contained HTML file with its styling built in. Hosted on
+GitHub Pages.
+Files
+FileWhat it isindex.htmlAbout / home pagethoughts.htmlWriting index (title + date list)projects.htmlProjects, with section headings and lists
+Each file is standalone: the CSS lives in a <style> block inside its <head>.
+There is no external style.css — that was an earlier approach that caused
+loading/mismatch problems, so the styles are now embedded directly in every page.
+Editing your content
+Open a .html file and edit the text between <article class="article"> … </article>.
+Standard HTML applies: <p> for paragraphs, <a href="…"> for links, <em> for
+emphasis, <code> for inline code.
+
+Add a thought: in thoughts.html, copy one <li> … </li> block. Keep the
+newest at the top; the dotted leader line and date alignment are automatic.
+Add a project: in projects.html, copy an <h2 class="section"> … </h2>
+plus its <p>. Give each <h2> a unique id so its hover # link works.
+
+Navigation
+There's no build step, so the nav menu is repeated in all three files. To add or
+rename a link, edit the <nav> block in each file, and put class="active"
+on the link for the current page.
+Colors and fonts
+
+Colors: at the top of each file's <style> block, under :root, is a set of
+CSS variables (--rurikon-100 … --rurikon-800, --bg). Lower number = lighter.
+Adjust --rurikon-500 (body text) and --rurikon-600 (headings) first.
+Note: because the CSS is embedded in each page, a color change must be made in
+all three files to stay consistent.
+Fonts: loaded from Google Fonts via the <link> in each <head> — Inter
+(body/headings) and Lora italic (for <em>). Inline code uses your system's
+monospace font. To change fonts, swap that link and update --font-sans /
+--font-serif in each <style> block.
+
+Publishing (GitHub Pages)
+This repo (danielmehus.github.io) is a GitHub user site, so anything committed
+to the root of the default branch publishes automatically at
+https://danielmehus.github.io/.
+To update the site: edit a file (or use Add file → Upload files to replace
+one), commit the change, wait ~1 minute, then hard-refresh the page
+(Cmd/Ctrl + Shift + R) — browsers cache aggressively, so a hard refresh is what
+makes new changes show up.
+Notes on fidelity
+This is a close visual approximation of shud.in, not a byte-for-byte copy. The
+exact color values and one custom layout breakpoint live in the original's
+compiled stylesheet, which isn't public; sensible equivalents are used here. The
+structure, spacing rhythm, typography scale, sticky side nav, hairline divider,
+hover underlines, and the thoughts/projects patterns all mirror the original.
