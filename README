@@ -1,67 +1,68 @@
-# Personal Website Template
+# Personal site
  
-A minimal personal website template inspired by [shud.in](https://shud.in/). Pure HTML and CSS — no frameworks, no build step, no dependencies.
+A minimal, build-free personal site (three pages) modeled on the layout of
+[shud.in](https://shud.in/). No frameworks, no build step — just HTML and one
+CSS file. Drop it into a repo and edit the text.
  
 ## Files
  
-| File | Page |
-|---|---|
-| `index.html` | About / home |
-| `thoughts.html` | Writing list |
-| `projects.html` | Projects |
-| `post-template.html` | Individual post (copy per article) |
+| File            | What it is                                            |
+| --------------- | ----------------------------------------------------- |
+| `index.html`    | About / home page                                     |
+| `thoughts.html` | Writing index (title + date list)                     |
+| `projects.html` | Projects, with section headings and lists             |
+| `style.css`     | All styling, shared by every page                     |
  
-## Getting Started
+## Editing content
  
-1. Open each file and replace `Your Name` with your name in the `<title>` tag and `<h1>`.
-2. Update the social links in `index.html` (GitHub, X/Twitter, LinkedIn).
-3. Fill in your bio paragraphs on `index.html`.
-4. Add your projects to `projects.html`.
-5. Add posts to `thoughts.html` and create individual post pages from `post-template.html`.
-## Adding a Post
+Open the `.html` files and replace the placeholder text. Everything between the
+`<article class="article"> … </article>` tags is your page content. Standard
+HTML applies: `<p>` for paragraphs, `<a href="…">` for links, `<em>` for
+emphasis, `<code>` for inline code.
  
-1. Create a folder called `thoughts/` at the root of your site.
-2. Copy `post-template.html` into it and rename it, e.g. `thoughts/my-first-post.html`.
-3. Update the `<title>`, `.post-date`, `<h1>`, and article body in the copied file.
-4. Add a corresponding entry to the list in `thoughts.html`:
-```html
-<li>
-  <a href="thoughts/my-first-post.html">
-    <span class="post-title">My First Post</span>
-    <span class="post-date">2025.06.15</span>
-  </a>
-</li>
-```
+- **Add a thought:** copy one `<li> … </li>` block in `thoughts.html`. Keep the
+  newest at the top. The dotted line and date alignment are automatic.
+- **Add a project:** copy a `<h2 class="section"> … </h2>` + `<p>` pair in
+  `projects.html`. Give each `<h2>` a unique `id` so its hover `#` link works.
+## Navigation
  
-## Customization
+Because there's no build step, the nav menu is repeated in all three files. To
+add or rename a link, edit the `<nav>` block in **each** file, and put
+`class="active"` on the link for the current page.
  
-All visual variables are defined at the top of each file's `<style>` block under `:root`:
+## Colors
  
-```css
-:root {
-  --bg: #fcfcfc;       /* Page background */
-  --text: #111;        /* Primary text */
-  --muted: #666;       /* Nav links, dates, secondary text */
-  --border: #e5e5e5;   /* Divider lines */
-  --max-width: 680px;  /* Content column width */
-  --side-pad: 2rem;    /* Horizontal padding */
-}
-```
+All colors are CSS variables at the top of `style.css`, under `:root`. Edit them
+in one place. The scale is named `rurikon` (lighter = lower number). These are an
+approximation of the original's deep-indigo greys; tweak `--rurikon-500` (body
+text) and `--rurikon-600` (headings) first if you want a different feel.
  
-Body copy uses `Georgia` (serif). Navigation uses the system sans-serif stack. To change fonts, update `--font-body` and `--font-ui` in each file's `:root`.
+## Fonts
  
-## Deployment
+Loaded from Google Fonts via the `<link>` in each file's `<head>`:
+**Inter** (body/headings) and **Lora** italic (used for `<em>`). To change them,
+swap that link and update `--font-sans` / `--font-serif` in `style.css`.
  
-Any static host works — GitHub Pages, Netlify, Vercel, Cloudflare Pages, etc. No build step required; upload the HTML files directly.
+Inline code uses your system's monospace font by default. The original uses
+*Iosevka*; if you want it, self-host the font or load it (e.g. from
+`fontsource`) and set `--font-mono` accordingly.
  
-**GitHub Pages quick start:**
+## Publishing on GitHub Pages
  
-```bash
-git init
-git add .
-git commit -m "initial"
-git remote add origin https://github.com/you/you.github.io.git
-git push -u origin main
-```
+1. Create a repo and add these files at its root.
+2. Commit and push.
+3. In the repo: **Settings → Pages → Build and deployment**, set
+   **Source = Deploy from a branch**, **Branch = main**, **Folder = / (root)**.
+4. Save. Your site appears at `https://<username>.github.io/<repo>/` within a
+   minute or two.
+Tip: to use a custom domain, add it under Settings → Pages, and create a file
+named `CNAME` containing just your domain.
  
-Your site will be live at `https://you.github.io`.
+## Notes on fidelity
+ 
+This is a close visual approximation, not a byte-for-byte copy. The exact color
+values and one custom layout breakpoint live in the original's compiled
+stylesheet, which isn't public; sensible equivalents are used here. The
+structure, spacing rhythm, typography scale, sticky side nav, hairline divider,
+hover underlines, and the thoughts/projects patterns all mirror the original.
+ 
