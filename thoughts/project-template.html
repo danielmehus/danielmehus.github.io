@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="theme-color" content="#fcfcfc" />
+  <title>Post Title — Your Name</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --bg: #fcfcfc;
+      --text: #111;
+      --muted: #666;
+      --link: #111;
+      --link-hover: #555;
+      --border: #e5e5e5;
+      --font-body: Georgia, 'Times New Roman', serif;
+      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+      --max-width: 680px;
+      --side-pad: 2rem;
+    }
+ 
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+ 
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem var(--side-pad) 6rem;
+    }
+ 
+    /* Nav */
+    nav { margin-bottom: 3.5rem; }
+ 
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+ 
+    nav a {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color 0.15s ease;
+    }
+ 
+    nav a:hover { color: var(--text); }
+ 
+    /* Post header */
+    .post-header {
+      margin-bottom: 2.5rem;
+    }
+ 
+    .post-date {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+    }
+ 
+    h1 {
+      font-family: var(--font-body);
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+ 
+    /* Post body */
+    .post-body p {
+      font-size: 15px;
+      color: #222;
+      margin-bottom: 1.25rem;
+      line-height: 1.85;
+    }
+ 
+    .post-body h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+ 
+    .post-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+ 
+    .post-body a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+ 
+    .post-body a:hover { color: var(--link-hover); }
+ 
+    .post-body ul, .post-body ol {
+      margin: 0 0 1.25rem 1.5rem;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #222;
+    }
+ 
+    .post-body li { margin-bottom: 0.3rem; }
+ 
+    /* Blockquote */
+    .post-body blockquote {
+      border-left: 2px solid var(--border);
+      padding-left: 1.25rem;
+      margin: 1.5rem 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+ 
+    /* Code */
+    .post-body code {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      background: #f5f4f0;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+ 
+    .post-body pre {
+      background: #f5f4f0;
+      padding: 1.25rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+ 
+    .post-body pre code {
+      background: none;
+      padding: 0;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+ 
+    /* Images within post */
+    .post-body img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1.5rem 0;
+    }
+ 
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+ 
+    /* Back link */
+    .back {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+ 
+    .back a {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+ 
+    .back a:hover { color: var(--text); }
+ 
+    @media (max-width: 600px) {
+      :root { --side-pad: 1.25rem; }
+      .page { padding-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav>
+      <ul>
+        <li><a href="../index.html">About</a></li>
+        <li><a href="../thoughts.html">Thoughts</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+      </ul>
+    </nav>
+ 
+    <main>
+      <header class="post-header">
+        <p class="post-date">2025.06.15</p>
+        <h1>Your Post Title Here</h1>
+      </header>
+ 
+      <article class="post-body">
+        <p>
+          This is the opening paragraph of your post. Write your introduction here. Keep sentences clear and the prose direct — the design favors writing that doesn't need visual decoration to carry weight.
+        </p>
+ 
+        <p>
+          Continue with the body of your argument or narrative. Use <a href="#">links</a> naturally within prose. Avoid over-structuring; let the text breathe.
+        </p>
+ 
+        <h2>A Section Heading</h2>
+ 
+        <p>
+          Section content goes here. If you need to illustrate a point with code:
+        </p>
+ 
+        <pre><code>const example = () => {
+  return "hello world";
+};</code></pre>
+ 
+        <p>
+          Inline <code>code</code> works too. For quotations, use a blockquote:
+        </p>
+ 
+        <blockquote>
+          <p>A well-placed quotation adds texture without interrupting the argument.</p>
+        </blockquote>
+ 
+        <p>
+          Closing thoughts. End with something worth remembering.
+        </p>
+      </article>
+ 
+      <div class="back">
+        <a href="../thoughts.html">← All thoughts</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+ 
