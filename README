@@ -1,0 +1,67 @@
+# Personal Website Template
+ 
+A minimal personal website template inspired by [shud.in](https://shud.in/). Pure HTML and CSS — no frameworks, no build step, no dependencies.
+ 
+## Files
+ 
+| File | Page |
+|---|---|
+| `index.html` | About / home |
+| `thoughts.html` | Writing list |
+| `projects.html` | Projects |
+| `post-template.html` | Individual post (copy per article) |
+ 
+## Getting Started
+ 
+1. Open each file and replace `Your Name` with your name in the `<title>` tag and `<h1>`.
+2. Update the social links in `index.html` (GitHub, X/Twitter, LinkedIn).
+3. Fill in your bio paragraphs on `index.html`.
+4. Add your projects to `projects.html`.
+5. Add posts to `thoughts.html` and create individual post pages from `post-template.html`.
+## Adding a Post
+ 
+1. Create a folder called `thoughts/` at the root of your site.
+2. Copy `post-template.html` into it and rename it, e.g. `thoughts/my-first-post.html`.
+3. Update the `<title>`, `.post-date`, `<h1>`, and article body in the copied file.
+4. Add a corresponding entry to the list in `thoughts.html`:
+```html
+<li>
+  <a href="thoughts/my-first-post.html">
+    <span class="post-title">My First Post</span>
+    <span class="post-date">2025.06.15</span>
+  </a>
+</li>
+```
+ 
+## Customization
+ 
+All visual variables are defined at the top of each file's `<style>` block under `:root`:
+ 
+```css
+:root {
+  --bg: #fcfcfc;       /* Page background */
+  --text: #111;        /* Primary text */
+  --muted: #666;       /* Nav links, dates, secondary text */
+  --border: #e5e5e5;   /* Divider lines */
+  --max-width: 680px;  /* Content column width */
+  --side-pad: 2rem;    /* Horizontal padding */
+}
+```
+ 
+Body copy uses `Georgia` (serif). Navigation uses the system sans-serif stack. To change fonts, update `--font-body` and `--font-ui` in each file's `:root`.
+ 
+## Deployment
+ 
+Any static host works — GitHub Pages, Netlify, Vercel, Cloudflare Pages, etc. No build step required; upload the HTML files directly.
+ 
+**GitHub Pages quick start:**
+ 
+```bash
+git init
+git add .
+git commit -m "initial"
+git remote add origin https://github.com/you/you.github.io.git
+git push -u origin main
+```
+ 
+Your site will be live at `https://you.github.io`.
